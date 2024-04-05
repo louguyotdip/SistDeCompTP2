@@ -35,3 +35,15 @@ int* incArray(int *arr,int size){
     }
     return arr;
 }
+
+
+int* getArray(){
+    int* arr =malloc(10*sizeof(int));
+    for(int i=0;i<10;i++){
+        arr[i]=i;
+    }
+    return arr;
+}
+void free_memory2(int *arr){
+    free(arr);
+}

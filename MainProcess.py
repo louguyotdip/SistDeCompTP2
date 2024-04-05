@@ -70,3 +70,13 @@ clibrary.incArray.restype = ctypes.POINTER(ctypes.c_int)
 result=clibrary.incArray(values,len(values))
 for i in range(10):
     print(result[i])
+    
+    
+#recibir una matriz desde C y guardarla como un python object(una lista)
+clibrary.getArray.restype=ctypes.POINTER(ctypes.c_int)
+result = clibrary.getArray()
+
+mylist = result[0:10]
+print(mylist)
+
+clibrary.free_memory2(result)
