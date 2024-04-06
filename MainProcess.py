@@ -5,10 +5,12 @@ import ctypes
 api_url = "https://api.worldbank.org/v2/en/country/all/indicator/SI.POV.GINI?format=json&date=2011:2020&per_page=32500&page=1&country=%22Argentina%22"
 
 # obtiene TODOS los datos de la api
-response=requests.get(api_url)
+def valueget():
+    response=requests.get(api_url)
+    return response
 
 # Convierte la respuesta en un diccionario de Python
-data = response.json()
+data = valueget().json()
 
 # Define el país que deseas buscar
 pais_a_buscar = "Argentina"

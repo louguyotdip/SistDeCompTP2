@@ -21,6 +21,7 @@
 # Editor/IDE specific files
 .vscode/
 .idea/
+.pytest_cache
 
 # Dont track sonnar files
 .scannerwork/
