@@ -1,6 +1,7 @@
 import requests
 import ctypes
 import matplotlib.pyplot as plt
+from matplotlib.widgets import Button
 
 # URL de la api
 api_url = "https://api.worldbank.org/v2/en/country/all/indicator/SI.POV.GINI?format=json&date=2011:2020&per_page=32500&page=1&country=%22Argentina%22"
@@ -56,15 +57,24 @@ indices = list(range(len(valores_po)))
 # Crea el gráfico
 plt.plot(indices, valores_po)
 plt.title("Cambio de valores de GINI - Argentina")
-plt.ylim(0, 100)
-plt.plot(indices, valores_po, color='red', linewidth=2)
+plt.ylim(20, 60)
+plt.plot(indices, valores_po, color = 'yellow', linewidth = 2, linestyle = '-.')
 
 # Etiqueta los ejes
-plt.xlabel("Año")
+#plt.xlabel("Año")
 plt.ylabel("Valor de GINI")
 
-# Agrega un boton en la esquina superior derecha del gráfico en la que se puede guardar la imagen
-plt.savefig("Cambio de valores de GINI - Argentina.png")
+# Crea el botón
+button = plt.axes([0.8, 0.05, 0.1, 0.075])  # Posición y tamaño del botón
+btn = Button(button, 'Guardar imagen')
+
+# Función que se ejecutará cuando se presione el botón
+def on_button_clicked(event):
+    plt.savefig("Cambio_de_valores_de_GIN_Argentina.png")
+    print('Imagen guardada!')
+
+# Conecta la función al evento del botón
+btn.on_clicked(on_button_clicked)
 
 # Muestra el gráfico
 plt.show()
