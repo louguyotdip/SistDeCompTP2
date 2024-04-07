@@ -31,7 +31,7 @@ for item in data[1]:  # data[1] contiene los datos reales, data[0] contiene meta
 print(valores)
 
 # Crea una biblioteca de objetos. Dynamic Link Library(DLL)
-clibrary = ctypes.CDLL(r"C:\Users\Plantita\Documents\GitHub\SistDeCompTP2\ctypes\clibrary.so")
+clibrary = ctypes.CDLL("/home/federica/Documents/Sistemas_de_Computacion/practico_2/SistDeCompTP2/ctypes/clibrary.so")
 
 # Asigna nombre a la funcion
 func = clibrary.ChangesArray
