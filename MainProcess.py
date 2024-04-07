@@ -55,6 +55,16 @@ indices = list(range(len(valores_po)))
 
 # Crea el gráfico
 plt.plot(indices, valores_po)
+plt.title("Cambio de valores de GINI - Argentina")
+plt.ylim(0, 100)
+plt.plot(indices, valores_po, color='red', linewidth=2)
+
+# Etiqueta los ejes
+plt.xlabel("Año")
+plt.ylabel("Valor de GINI")
+
+# Agrega un boton en la esquina superior derecha del gráfico en la que se puede guardar la imagen
+plt.savefig("Cambio de valores de GINI - Argentina.png")
 
 # Muestra el gráfico
 plt.show()
