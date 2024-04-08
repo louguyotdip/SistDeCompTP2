@@ -61,7 +61,7 @@ anios, valores_po = zip(*sorted(zip(anios, valores_po)))
 #indices = list(range(len(valores_po)))
 
 # Crea una figura
-fig = plt.figure(figsize=(10, 5), color = 'lightgrey')
+fig = plt.figure(figsize=(10, 5), color = 'grey')
 
 # Crea el gráfico y lo agrega a la figura
 ax = fig.add_axes([0.1, 0.2, 0.8, 0.7])
