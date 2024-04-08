@@ -19,6 +19,8 @@ pais_a_buscar = "Argentina"
 
 # Inicializa una lista vacía para almacenar los valores
 valores = []
+# Inicializa una lista vacía para almacenar los años de la lista de valores
+anios = []
 
 # Inicializa una lista vacía para almacenar los valores
 for item in data[1]:  # data[1] contiene los datos reales, data[0] contiene metadatos
@@ -27,9 +29,11 @@ for item in data[1]:  # data[1] contiene los datos reales, data[0] contiene meta
         # Si el valor no es None, se añade a la lista
         if item["value"] is not None:
             valores.append(item["value"])
+            anios.append(item["date"])
 
 # Imprime los valores
 print(valores)
+print(anios)
 
 # Crea una biblioteca de objetos. Dynamic Link Library(DLL)
 clibrary = ctypes.CDLL("/home/federica/Documents/Sistemas_de_Computacion/practico_2/SistDeCompTP2/ctypes/clibrary.so")
@@ -51,17 +55,20 @@ nuevosvalores_c = func(valores_c, len(valores))
 valores_po = nuevosvalores_c[:len(valores)]
 print(valores_po) 
 
-# Crea una lista de índices para el eje x
-indices = list(range(len(valores_po)))
+# Crea una lista de índices para el eje y
+#indices = list(range(len(valores_po)))
 
 # Crea el gráfico
-plt.plot(indices, valores_po)
+#plt.plot(anios, valores_po)
+fig, ax = plt.subplots()
+ax.set_facecolor('lightgray')
+plt.grid(True)
+plt.plot(anios, valores_po, color = 'blue', linewidth = 2, linestyle = '-.')
 plt.title("Cambio de valores de GINI - Argentina")
 plt.ylim(20, 60)
-plt.plot(indices, valores_po, color = 'blue', linewidth = 2, linestyle = '-.')
 
 # Etiqueta los ejes
-#plt.xlabel("Año")
+plt.xlabel("Año")
 plt.ylabel("Valor de GINI")
 
 # Ajusta los margenes del grafico
