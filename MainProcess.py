@@ -58,7 +58,7 @@ indices = list(range(len(valores_po)))
 plt.plot(indices, valores_po)
 plt.title("Cambio de valores de GINI - Argentina")
 plt.ylim(20, 60)
-plt.plot(indices, valores_po, color = 'blue', linewidth = 2, linestyle = '-..')
+plt.plot(indices, valores_po, color = 'blue', linewidth = 2, linestyle = '-.')
 
 # Etiqueta los ejes
 #plt.xlabel("Año")
