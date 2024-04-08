@@ -58,7 +58,7 @@ indices = list(range(len(valores_po)))
 plt.plot(indices, valores_po)
 plt.title("Cambio de valores de GINI - Argentina")
 plt.ylim(20, 60)
-plt.plot(indices, valores_po, color = 'yellow', linewidth = 2, linestyle = '-.')
+plt.plot(indices, valores_po, color = 'blue', linewidth = 2, linestyle = '-..')
 
 # Etiqueta los ejes
 #plt.xlabel("Año")
@@ -68,8 +68,8 @@ plt.ylabel("Valor de GINI")
 plt.subplots_adjust(bottom=0.2, right=0.85)
 
 # Crea el botón
-button = plt.axes([0.8, 0.05, 0.1, 0.075])  # Posición y tamaño del botón
-btn = Button(button, 'Guardar imagen')
+button = plt.axes([0.8, 0.05, 0.2, 0.075])  # Posición y tamaño del botón
+btn = Button(button, 'Guardar imagen', color = 'lightblue')
 
 # Función que se ejecutará cuando se presione el botón
 def on_button_clicked(event):
