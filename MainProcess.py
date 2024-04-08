@@ -55,15 +55,21 @@ nuevosvalores_c = func(valores_c, len(valores))
 valores_po = nuevosvalores_c[:len(valores)]
 print(valores_po) 
 
+# Empareja el orden de los anios y los valores
+anios, valores_po = zip(*sorted(zip(anios, valores_po)))
+
 # Crea una lista de índices para el eje y
 #indices = list(range(len(valores_po)))
+
+# Crea una figura
+plt.figure(1)
 
 # Crea el gráfico
 #plt.plot(anios, valores_po)
 fig, ax = plt.subplots()
-ax.set_facecolor('lightgray')
+ax.set_facecolor('white')
 plt.grid(True)
-plt.plot(anios, valores_po, color = 'blue', linewidth = 2, linestyle = '-.')
+plt.plot(anios, valores_po, color = 'lightblue', linewidth = 2, linestyle = '-.')
 plt.title("Cambio de valores de GINI - Argentina")
 plt.ylim(20, 60)
 
