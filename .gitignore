@@ -26,3 +26,5 @@
 # Dont track sonnar files
 .scannerwork/
 
+# Dont track png files
+*.png
