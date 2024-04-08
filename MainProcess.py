@@ -17,16 +17,15 @@ data = valueget().json()
 # Define el país que se desea buscar
 pais_a_buscar = "Argentina"
 
-# Inicializa una lista vacía para almacenar los valores
+# Inicializa una lista vacía para almacenar los valores y otra para almacenar los años
 valores = []
-# Inicializa una lista vacía para almacenar los años de la lista de valores
 anios = []
 
 # Inicializa una lista vacía para almacenar los valores
 for item in data[1]:  # data[1] contiene los datos reales, data[0] contiene metadatos
     # Comprueba si el valor del país coincide con el país que se desea buscar
     if item["country"]["value"] == pais_a_buscar:
-        # Si el valor no es None, se añade a la lista
+        # Si el valor no es None, se añade a la respectiva lista
         if item["value"] is not None:
             valores.append(item["value"])
             anios.append(item["date"])
@@ -61,11 +60,10 @@ anios, valores_po = zip(*sorted(zip(anios, valores_po)))
 # Crea una lista de índices para el eje y
 #indices = list(range(len(valores_po)))
 
-# Crea una figura
-plt.figure(1)
+# Crea una figura que contenga el grafico
+plt.figure(figsize=(10, 5))
 
 # Crea el gráfico
-#plt.plot(anios, valores_po)
 fig, ax = plt.subplots()
 ax.set_facecolor('white')
 plt.grid(True)
