@@ -60,8 +60,8 @@ anios, valores_po = zip(*sorted(zip(anios, valores_po)))
 # Crea una lista de índices para el eje y
 #indices = list(range(len(valores_po)))
 
-# Crea una figura
-fig = plt.figure(figsize=(10, 5), color = 'grey')
+# Crea una figura con un fondo gris
+fig = plt.figure(figsize=(10, 5), facecolor = 'grey')
 
 # Crea el gráfico y lo agrega a la figura
 ax = fig.add_axes([0.1, 0.2, 0.8, 0.7])
@@ -78,8 +78,11 @@ ax.set_ylabel("Valor de GINI")
 # Ajusta los margenes del grafico
 #plt.subplots_adjust(bottom=0.2, right=0.85)
 
-# Crea el botón
-button = fig.add_axes([0.75, 0.05, 0.2, 0.075])  # Posición y tamaño del botón
+# Calcula la posición del borde izquierdo del botón para centrarlo
+button_left = 0.5 - 0.2 / 2  # 0.5 (mitad de la figura) - 0.2 / 2 (mitad del ancho del botón)
+
+# Crea el botón y lo agrega a la figura
+button = fig.add_axes([button_left, 0.05, 0.2, 0.075])  # Posición y tamaño del botón
 btn = Button(button, 'Guardar imagen', color = 'lightblue')
 
 # Función que se ejecutará cuando se presione el botón
