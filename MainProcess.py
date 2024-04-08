@@ -60,26 +60,26 @@ anios, valores_po = zip(*sorted(zip(anios, valores_po)))
 # Crea una lista de índices para el eje y
 #indices = list(range(len(valores_po)))
 
-# Crea una figura que contenga el grafico
-plt.figure(figsize=(10, 5))
+# Crea una figura
+fig = plt.figure(figsize=(10, 5), color = 'lightgrey')
 
-# Crea el gráfico
-fig, ax = plt.subplots()
+# Crea el gráfico y lo agrega a la figura
+ax = fig.add_axes([0.1, 0.2, 0.8, 0.7])
 ax.set_facecolor('white')
-plt.grid(True)
-plt.plot(anios, valores_po, color = 'lightblue', linewidth = 2, linestyle = '-.')
-plt.title("Cambio de valores de GINI - Argentina")
-plt.ylim(20, 60)
+ax.grid(True)
+ax.plot(anios, valores_po, color = 'lightblue', linewidth = 2, linestyle = '-.')
+ax.set_title("Cambio de valores de GINI - Argentina")
+ax.set_ylim(20, 60)
 
 # Etiqueta los ejes
-plt.xlabel("Año")
-plt.ylabel("Valor de GINI")
+ax.set_xlabel("Año")
+ax.set_ylabel("Valor de GINI")
 
 # Ajusta los margenes del grafico
-plt.subplots_adjust(bottom=0.2, right=0.85)
+#plt.subplots_adjust(bottom=0.2, right=0.85)
 
 # Crea el botón
-button = plt.axes([0.75, 0.05, 0.2, 0.075])  # Posición y tamaño del botón
+button = fig.add_axes([0.75, 0.05, 0.2, 0.075])  # Posición y tamaño del botón
 btn = Button(button, 'Guardar imagen', color = 'lightblue')
 
 # Función que se ejecutará cuando se presione el botón
