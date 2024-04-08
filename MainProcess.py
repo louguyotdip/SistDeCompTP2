@@ -68,7 +68,7 @@ plt.ylabel("Valor de GINI")
 plt.subplots_adjust(bottom=0.2, right=0.85)
 
 # Crea el botón
-button = plt.axes([0.8, 0.05, 0.2, 0.075])  # Posición y tamaño del botón
+button = plt.axes([0.75, 0.05, 0.2, 0.075])  # Posición y tamaño del botón
 btn = Button(button, 'Guardar imagen', color = 'lightblue')
 
 # Función que se ejecutará cuando se presione el botón
