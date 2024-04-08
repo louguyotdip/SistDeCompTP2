@@ -64,6 +64,9 @@ plt.plot(indices, valores_po, color = 'yellow', linewidth = 2, linestyle = '-.')
 #plt.xlabel("Año")
 plt.ylabel("Valor de GINI")
 
+# Ajusta los margenes del grafico
+plt.subplots_adjust(bottom=0.2, right=0.85)
+
 # Crea el botón
 button = plt.axes([0.8, 0.05, 0.1, 0.075])  # Posición y tamaño del botón
 btn = Button(button, 'Guardar imagen')
