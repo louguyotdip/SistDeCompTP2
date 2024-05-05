@@ -12,6 +12,6 @@ def test_get_country():
 def test_button_position():
     assert button_position() > 0
 
-# Testea si el tamaño de la lista de indice GINI antes de pasarsela a C y luego de retornarla es el mismo
+# Testea si el tamaño de la lista de indice GINI es mayor a 0
 def test_pre_post_c_function():
     assert len(get_values_po()) > 0 
