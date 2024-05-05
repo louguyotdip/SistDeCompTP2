@@ -13,4 +13,4 @@ def test_button_position():
 
 # Testea si el tamaño de la lista de indice GINI antes de pasarsela a C y luego de retornarla es el mismo
 def test_pre_post_c_function():
-    assert len(get_values_po()) > 0 #len(filter_and_fill()) == len(get_values_po())  
+    assert len(get_values_po()) > 0 
