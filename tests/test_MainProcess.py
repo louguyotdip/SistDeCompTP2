@@ -8,6 +8,7 @@ def test_value_get():
 def test_get_country():
     assert get_country() == "Argentina"
 
+# Testea si la posicion que se calcula del boton es un numero mayor a 0
 def test_button_position():
     assert button_position() > 0
 
