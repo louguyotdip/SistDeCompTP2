@@ -8,9 +8,10 @@ def test_value_get():
 def test_get_country():
     assert get_country() == "Argentina"
 
+# Testea si la posicion que se calcula del boton es un numero mayor a 0
 def test_button_position():
     assert button_position() > 0
 
-# Testea si el tamaño de la lista de indice GINI antes de pasarsela a C y luego de retornarla es el mismo
+# Testea si el tamaño de la lista de indice GINI es mayor a 0
 def test_pre_post_c_function():
     assert len(get_values_po()) > 0 

@@ -75,9 +75,6 @@ def get_values_po():
 # Empareja el orden de los years y los values
 years, valores_po = zip(*sorted(zip(years, get_values_po())))
 
-# Crea una lista de índices para el eje y
-#indices = list(range(len(valores_po)))
-
 # Crea una figura con un fondo gris
 fig = plt.figure(figsize=(10, 5), facecolor = 'grey')
 
@@ -92,9 +89,6 @@ ax.set_ylim(20, 60)
 # Etiqueta los ejes
 ax.set_xlabel("Año")
 ax.set_ylabel("Valor de GINI")
-
-# Ajusta los margenes del grafico
-#plt.subplots_adjust(bottom=0.2, right=0.85)
 
 # Calcula la posición del borde izquierdo del botón para centrarlo
 def button_position():
